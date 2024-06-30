@@ -7,8 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	Resultado: ${alien}
 
-	Welcome back ${name} 
 </body>
 </html>
