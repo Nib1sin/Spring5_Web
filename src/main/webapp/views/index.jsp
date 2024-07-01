@@ -17,14 +17,19 @@
 			<input type="submit">
 		</form>
 		<hr>
-		<form action="getAlien">
+		<form action="getAlien" methd="get">
 			Ingresa el id del Alien: <input type="text" name="aid"><br>
 			<input type="submit">
+		</form>
+		<hr>
+		<form action="getAlienByName" method="get">
+			Ingresa el nombre del Alien: <input type="text" name="aname">
 		</form>
 		<hr>
 		<form action="getAliens">
 			Buscar todos los Aliens? <input type="submit">
 		</form>
+		
 		
 	</body>
 </html>

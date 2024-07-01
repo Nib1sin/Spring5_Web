@@ -7,11 +7,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.efsoft.spring_mvc.model.Alien;
 import com.efsoft.spring_mvc.repository.AlienRepository;
+
+import oracle.jdbc.proxy.annotation.Post;
 
 import java.util.List;
 
@@ -38,7 +41,8 @@ public class HomeController {
 	}
 	*/
 		
-	@RequestMapping("addAlien")
+	//@RequestMapping("addAlien")
+	@PostMapping(value="addAlien")
 	public String addAliens(@ModelAttribute("result") Alien a){
 		alienRepository.addAlien(a);
 		
@@ -58,5 +62,13 @@ public class HomeController {
 		m.addAttribute("result", alienRepository.getAlien(aid)); 
 		return "showAliens";
 	}
+	
+	/*TODO: implementar JPA para personalizar query
+	@GetMapping("getAlienByName")
+	public String getAlienByName(@RequestParam String aname, Model m){
+		m.addAttribute("result", alienRepository.getAlienByName(aname)); 
+		return "showAliens";
+	}
+	*/
 
 }
