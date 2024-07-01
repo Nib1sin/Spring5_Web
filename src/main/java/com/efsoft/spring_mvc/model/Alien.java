@@ -1,10 +1,12 @@
 package com.efsoft.spring_mvc.model;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
-
+@Entity
 public class Alien {
 
+	@Id
 	private int aid;
 	private String aname;
 	
@@ -13,6 +15,8 @@ public class Alien {
 		this.aid = aid;
 		this.aname = aname;
 	}
+	public Alien() {
+    }
 	
 	public int getAid() {
 		return aid;

@@ -31,16 +31,31 @@ public class HomeController {
 		return "index";
 	}
 	
-	@RequestMapping("addAlien")
+	/*TODO
+	@RequestMapping("addAliens")
 	public String addAlien(@ModelAttribute("alien") Alien a) {
 		return "result";
 	}
+	*/
+		
+	@RequestMapping("addAlien")
+	public String addAliens(@ModelAttribute("result") Alien a){
+		alienRepository.addAlien(a);
+		
+		return "showAliens";
+	}
 	
-	@RequestMapping("getAliens")
+	//@RequestMapping(method = RequestMethod.GET)
+	@GetMapping("getAliens")
 	public String getAliens(Model m){
 		//List<Alien> aliens = Arrays.asList(new Alien(101, "Holis"), new Alien(102, "Holis2"));
 		m.addAttribute("result", alienRepository.getAliens()); 
-		
+		return "showAliens";
+	}
+	
+	@GetMapping("getAlien")
+	public String getAlien(@RequestParam int aid, Model m){
+		m.addAttribute("result", alienRepository.getAlien(aid)); 
 		return "showAliens";
 	}
 

@@ -12,9 +12,18 @@
 		<h2>Sping 5 MVC</h2>
 		
 		<form action="addAlien">
-			Ingresa el id: 	<input type="text" name="aid"><br>
-			Ingre el nombre:<input type="text" name="aname"><br>
+			Ingresa el id: <input type="text" name="aid"><br>
+			Ingre el nombre: <input type="text" name="aname"><br>
 			<input type="submit">
+		</form>
+		<hr>
+		<form action="getAlien">
+			Ingresa el id del Alien: <input type="text" name="aid"><br>
+			<input type="submit">
+		</form>
+		<hr>
+		<form action="getAliens">
+			Buscar todos los Aliens? <input type="submit">
 		</form>
 		
 	</body>
