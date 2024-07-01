@@ -1,10 +1,17 @@
-package com.efsoft.spring_mvc.model;
+package com.efsoft.spring_mvc;
+
+import java.util.Arrays;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import com.efsoft.spring_mvc.model.Alien;
+
+import java.util.List;
 
 @Controller
 public class HomeController {
@@ -24,5 +31,11 @@ public class HomeController {
 		return "result";
 	}
 	
+	@GetMapping("getAliens")
+	public String getAliens(Model m){
+		List<Alien> aliens = Arrays.asList(new Alien(101, "Holis"), new Alien(102, "Holis2")
+				);
+		return aliens.toString();
+	}
 
 }
