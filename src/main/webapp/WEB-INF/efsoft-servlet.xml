@@ -20,19 +20,19 @@
 	<!-- Config del DataSource -->
 	<bean id="myDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
 		<property name="driverClass" value="com.mysql.jdbc.Driver"></property>
-		<property name="jdbcUrl" value="jdbc:mysql://localhosto:3306/Efsoft"></property>
+		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/efsoft"></property>
 		<property name="user" value="root"></property>
 		<property name="password" value="Amdukia@1258"></property>
 		
 		<property name="minPoolSize" value="5"></property>
 		<property name="maxPoolSize" value="10"></property>
-		<property name="maxIdletTime" value="30000"></property>	
+		<property name="maxIdleTime" value="30000"></property>	
 	</bean>
 	
 	<!-- Config de la session Hibernate -->
 	<bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
 		<property name="dataSource" ref="myDataSource"></property>
-		<property name="packageToScan" value="com.efsoft.spring_mvc.model"></property>
+		<property name="packagesToScan" value="com.efsoft.spring_mvc.model"></property>
 		<property name="hibernateProperties">
 			<props>
 				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>

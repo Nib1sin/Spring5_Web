@@ -1,5 +1,8 @@
 package com.efsoft.spring_mvc.model;
 
+import javax.persistence.Entity;
+
+
 public class Alien {
 
 	private int aid;
