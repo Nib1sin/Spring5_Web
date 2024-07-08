@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.efsoft.spring_mvc.model.Alien;
 import com.efsoft.spring_mvc.repository.AlienRepository;
 
-import oracle.jdbc.proxy.annotation.Post;
 
 import java.util.List;
 
