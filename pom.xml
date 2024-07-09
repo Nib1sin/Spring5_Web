@@ -95,12 +95,27 @@
   <properties>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
+    
+    <sonar.projectKey>Spring5_web</sonar.projectKey>
+    <sonar.projectName>Spring5_web</sonar.projectName>
+    <sonar.host.url>http://localhost:9000</sonar.host.url>
+    <sonar.coverage.jacoco.xmlReportPaths>target/site/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
+    <!-- Excluir clases del reporte de Sonarqube -->
+    <sonar.coverage.exclusions>src/**/model/*, src/**/HomeController.java</sonar.coverage.exclusions>
   </properties>
 
 
   <build>
     <finalName>Spring5_web</finalName>
     <plugins>
+    	<!-- Mejorar la calidad de codigo -->
+    	<plugin>
+            <groupId>org.sonarsource.scanner.maven</groupId>
+            <artifactId>sonar-maven-plugin</artifactId>
+            <version>4.0.0.4121</version>
+        </plugin>
+    
+    	<!-- Generador de Reportes -->
         <plugin>
             <groupId>org.jacoco</groupId>
             <artifactId>jacoco-maven-plugin</artifactId>
@@ -117,6 +132,13 @@
                     <goals>
                         <goal>report</goal>
                     </goals>
+                    <!-- Config para excluir el model (entity) or el main -->
+                    <configuration>
+					    <excludes>
+					        <exclude>**/model/Alien.class</exclude>
+					        <exclude>**/HomeController.class</exclude>
+					    </excludes>
+					</configuration>
                 </execution>
                 <execution>
                     <id>jacoco-check</id>
