@@ -52,7 +52,7 @@ public class HomeController {
 	@GetMapping("getAliens")
 	public String getAliens(Model m){
 		//List<Alien> aliens = Arrays.asList(new Alien(101, "Holis"), new Alien(102, "Holis2"));
-		m.addAttribute("result", alienRepository.getAliens()); 
+		m.addAttribute("result", alienRepository.getAliens().toString()); 
 		return "showAliens";
 	}
 	

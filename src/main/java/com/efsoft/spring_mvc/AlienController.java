@@ -24,10 +24,10 @@ public class AlienController {
 	//Para devolver un xml y no un json
 	//@GetMapping(path="aliens", produces={"aplication/xml"})
 	@GetMapping("aliens")
-	public String getAliens(){
+	public List<Alien> getAliens(){
 		//m.addAttribute("result", alienRepository.getAliens()); 
 		List<Alien> aliens = alienRepository.getAliens();
-		return aliens.toString();
+		return aliens;
 	}
 	
 	@GetMapping("alien/{aid}")
@@ -42,4 +42,5 @@ public class AlienController {
 		alienRepository.addAlien(alien);
 		return alien;
 	}
+
 }
