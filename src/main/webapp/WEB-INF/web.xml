@@ -10,6 +10,7 @@
 	</servlet>
 
 
+	 <!-- Contexto de aplicación definido en efsoft-servlet.xml -->
 	<servlet-mapping>
 		<servlet-name>efsoft</servlet-name>
 		<url-pattern>/</url-pattern>
@@ -18,9 +19,5 @@
 	
 	
 	
-	
-	
-
-  
   
 </web-app>
